@@ -23,9 +23,20 @@ function App() {
     }
   ])
 
+  function addTask(taskTitle: string) {
+    setTasks([
+      ...tasks,
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false
+      }
+    ])
+  }
+
   return (
     <>
-      <Header />
+      <Header onAddTask={addTask} />
       <Tasks tasks={tasks} />
     </>
   )
