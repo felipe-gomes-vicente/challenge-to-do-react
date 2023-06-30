@@ -43,3 +43,23 @@
   flex-direction: column;
   gap: .75rem;
 }
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-top: 4rem;
+  gap: 1rem;
+  color: var(--gray-300);
+  text-align: center;
+}
+
+.empty svg {
+  opacity: .3;
+}
+
+.empty p {
+  font-weight: 700;
+}
