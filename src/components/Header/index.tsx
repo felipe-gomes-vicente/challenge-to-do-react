@@ -24,13 +24,15 @@ export function Header({ onAddTask }: Props) {
     setTitle(event.target.value)
   }
 
+  const isNewTitleEmpty = title.trim().length === 0;
+
   return (
     <header className={styles.header} >
       <img src={todoLogo} alt="" />
 
       <form className={styles.newTaskForm} onSubmit={handleSubmit}>
         <input type="text" onChange={onChangeTitle} value={title} placeholder='Adicione uma nova tarefa' />
-        <button>
+        <button disabled={isNewTitleEmpty}>
           Criar 
           <AiOutlinePlusCircle size={20} />
         </button>
